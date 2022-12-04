@@ -1,1 +1,20 @@
-<p>employee works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Status</td>
+            <td>Created At</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.age}}</td>
+            <td>{{emp.status}}</td>
+            <td>{{emp.createdAt | date}}</td>
+        </tr>
+    </tbody>
+</table>

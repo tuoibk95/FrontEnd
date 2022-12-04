@@ -4,6 +4,16 @@ Control has been visited:               Ng-touched                              
 Control's value  has changed            Ng-dirty                                    Ng-pristine
 control value is valid                  Ng-valid                                    Ng-invalid
 
+# Promise
+Một đối tượng thao tác bất đồng bộ: đại diện cho 1 giá trị (đóng gói) có thể chưa có sẵn và trong tương lai sẽ có
+pending: gọi request đến server thì promise được khởi tạo
+fulfilled: then method xử lý kq khi thành công
+rejected: khi fail -> then method để xử lý lỗi .catch => error handling 
+
+# Observable
+Giống với promise nhưng có các ưu điểm: Nhận nhiều giá trị ở nhiều thời điểm
+Có thể cancell khi request đã gửi đi (promise không có)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
 
 ## Development server
