@@ -1,0 +1,4 @@
+<label class="col-sm-3">Company Name</label>
+<div class="col-sm-9"><input class="form-control" [(ngModel)]="companyName" /></div>
+<button class="btn btn-primary" (click)="AddCompany()" *ngIf="id==0">Add Company</button>
+<button class="btn btn-primary" (click)="UpdateCompany()" *ngIf="id!=0">Update Company</button>
