@@ -1,0 +1,36 @@
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="AddCompany()">Add Company</button>
+<br>
+<div class="modal" id="myModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{tieude}}</h4>
+                <button type="button" class="close" data-dismiss="modal" (click) = "ClosePopup()">&times;</button>
+            </div>
+            <div>
+                <app-action-company [company]="company" *ngIf="action"></app-action-company>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>company code</td>
+            <td>company name</td>
+            <td>option</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let comp of listCompany">
+            <td>{{comp.id}}</td>
+            <td>{{comp.companyName}}</td>
+            <td>
+                <button style="color: rgb(0, 30, 128);" type="button" class="btn btn-light mr-1" (click)="GetDetailCompany(comp)" data-toggle="modal" data-target="#myModal">Edit</button>
+                <button style="color: rgb(128, 0, 43);" type="button" class="btn btn-light mr-1" (click)="DeleteCompany(comp)">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
