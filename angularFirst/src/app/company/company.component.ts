@@ -10,8 +10,6 @@ export class CompanyComponent implements OnInit {
 
   constructor(private employeeService : EmployeeService) { }
 
-  
-
   ngOnInit(): void {
 
   }

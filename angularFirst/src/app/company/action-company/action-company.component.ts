@@ -8,7 +8,7 @@ import { EmployeeService } from 'src/app/service/employee.service';
 })
 export class ActionCompanyComponent implements OnInit {
 
-  id : any;
+  @Input() id : any;
   companyName : any = [];
   @Input() company:any;
   constructor(private employeeService: EmployeeService) { }
@@ -20,21 +20,25 @@ export class ActionCompanyComponent implements OnInit {
 
   AddCompany() {
     let data = {
-      id:this.id,
+      // id : this.id,
       companyName : this.companyName
     };
-    this.employeeService.AddCompany(data).subscribe(response => {
-      alert(response.toString());
-    });
+    if(data.companyName !== "") {
+      this.employeeService.AddCompany(data).subscribe(response => {
+        alert(response.toString());
+      });
+    }
   }
 
   UpdateCompany() {
     let data = {
-      id :this.id,
+      id : this.id,
       companyName : this.companyName
     };
-    this.employeeService.UpdateCompany(data).subscribe(response => {
-      alert(response.toString());
-    });
+    if(data.companyName !== "") {
+      this.employeeService.UpdateCompany(data).subscribe(response => {
+        alert(response.toString());
+      });
+    }
   }
 }

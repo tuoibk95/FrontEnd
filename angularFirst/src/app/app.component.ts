@@ -1,8 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { GreetComponent } from './greet/greet.component';
+import { Component } from '@angular/core';
 
-
-// decorrator
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,10 +11,6 @@ export class AppComponent {
   public disgree : number = 0;
   public names = ['Mr A', 'Mr B', 'Mr C', 'Mr D']
 
-
-  @ViewChild(GreetComponent)
-  private greetComponent!: GreetComponent;
-
   parentVote(agreePram: boolean) {
     if(agreePram) {
       this.agree++;
@@ -26,9 +19,4 @@ export class AppComponent {
       this.disgree++;
     }
   }
-
-  changeName(){
-    this.greetComponent.setName('change name is parent')
-  }
-
 }
