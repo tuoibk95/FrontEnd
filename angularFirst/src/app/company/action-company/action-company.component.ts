@@ -26,11 +26,13 @@ export class ActionCompanyComponent implements OnInit {
     if(data.companyName !== "") {
       this.employeeService.AddCompany(data).subscribe(response => {
         alert(response.toString());
+        localStorage.setItem('company', 'Lê Văn Tươi');
       });
     }
   }
 
   UpdateCompany() {
+    let companyLocalStorage = localStorage.getItem('company');
     let data = {
       id : this.id,
       companyName : this.companyName
